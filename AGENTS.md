@@ -21,3 +21,12 @@ Guidance for automated agents (dsh-superagent) working in this repository.
 
 - One-line commit messages, imperative mood (e.g. `Add testing note to README`).
 - Plain Markdown. No generated files, no binary artifacts, no dependency changes unless explicitly requested.
+
+## Model division of labor
+
+- You (the Executor) implement with your own model. Keep the core
+  implementation, refactors and anything touching behavior to yourself.
+- For research, summarizing docs, formatting checks or drafting prose,
+  spawn a subagent with the `zcode/GLM-5.3-Flash` model (via
+  `dsh-magpie-connect`) instead of doing it inline.
+- Never let a subagent make the final call on design decisions.
