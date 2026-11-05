@@ -27,6 +27,8 @@ Guidance for automated agents (dsh-superagent) working in this repository.
 - You (the Executor) implement with your own model. Keep the core
   implementation, refactors and anything touching behavior to yourself.
 - For research, summarizing docs, formatting checks or drafting prose,
-  spawn a subagent with the `zcode/GLM-5.3-Flash` model (via
-  `dsh-magpie-connect`) instead of doing it inline.
+  spawn a subagent with the `group/smart-split` model (via
+  `dsh-magpie-connect`) instead of doing it inline: Magpie routes each
+  subtask to a strong or a cheap model by its difficulty, so you never
+  need to pick a vendor yourself.
 - Never let a subagent make the final call on design decisions.
